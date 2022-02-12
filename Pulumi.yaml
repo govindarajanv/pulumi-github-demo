@@ -1,0 +1,6 @@
+name: pulumi-github-admin
+runtime:
+  name: python
+  options:
+    virtualenv: venv
+description: Managing GitHub Administration using Pulumi

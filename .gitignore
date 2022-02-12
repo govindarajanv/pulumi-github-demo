@@ -1,0 +1,3 @@
+*.pyc
+venv/
+Pulumi.github-pulumi-dev.yaml
