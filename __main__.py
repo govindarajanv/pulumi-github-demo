@@ -45,5 +45,19 @@ repo_branch_protection = github.BranchProtection("repoBranchProtection",
     )],
     enforce_admins=True,
     allows_deletions=True)
+web_hook = github.RepositoryWebhook("web_hook",
+    repository=repository.name,
+    configuration=github.RepositoryWebhookConfigurationArgs(
+        url="https://dummy.com/",
+        content_type="form",
+        insecure_ssl=False,
+    ),
+    active=False,
+    events=["issues"])
+
+# Setting runners group
+repo_runnergroup = github.ActionsRunnerGroup("repo_runnergroup",
+    visibility="selected",
+    selected_repository_ids=[repository.repo_id])
 # Export the Name of the repository
 pulumi.export('name', repository.name)
